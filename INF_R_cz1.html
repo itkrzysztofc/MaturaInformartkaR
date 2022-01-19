@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Rekurencja</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        Rekurencyjna funkcja
+        <script>
+            function reku(x,n){
+                var k;
+                if(n==1) return x;
+                else {
+                    if(n%3==0){
+                        let a=(n/3)-(n%3);
+                        k=reku(x,a);
+                        return Math.pow(k,3);
+                    } else {
+                        return x*reku(x,n-1);
+                    }
+                }
+            }
+        </script>
+        <form>
+            Podaj n: <input type="number" id="n" value="1" /><br />
+            Podaj x: <input type="number" id="x" value="2" /> 
+            <input type="button" onclick="this.form.wynik.value=reku(this.form.x.value,this.form.n.value)" value="Podaj liczby całkowite i kliknij we mnie" />
+            <br />
+            wynik: <input type="text" id="wynik" name="wynik" />
+        </form>
+    </body>
+</html>
